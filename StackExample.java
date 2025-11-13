@@ -1,37 +1,40 @@
+import java.util.LinkedList;
 
-class MyStack<T> {
+class MyStack<T> extends LinkedList<T> {
 
     public MyStack() {
+        super();
     }
 
+    // push：加入到 stack 頂端（LinkedList 尾端）
     public void push(T item) {
+        this.addLast(item);
     }
 
+    // pop：從頂端移出並回傳
     public T pop() {
-        return stack.top();
+        return this.removeLast();
     }
 
-    // 检查栈是否为空
+    // 是否為空
     public boolean isEmpty() {
-        return stack.isEmpty();
+        return super.isEmpty();
     }
 
-    // 返回栈中的元素数量
+    // 大小
     public int size() {
-        return stack.size();
+        return super.size();
     }
 }
 
-public class StackExample{
+public class StackExample {
     public static void main(String[] args) {
         MyStack<Integer> stack = new MyStack<>();
         //do some test if needed
     }
 }
 
-
-
-//我的Junit測試會測這個Object，這邊以下請不要修改
+// 我的Junit測試會測這個Object，這邊以下請不要修改
 //---------------------------------------------------------------------------------
 class Person {
     private String name;
